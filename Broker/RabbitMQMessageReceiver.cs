@@ -45,6 +45,9 @@ public class RabbitMQMessageReceiver : IMessageReceiver
         var factory = new ConnectionFactory() { Uri = new Uri(_config.Uri) };
         connection = await factory.CreateConnectionAsync();
         channel = await connection.CreateChannelAsync();
+        await channel.ExchangeDeclareAsync(_config.Exchange, ExchangeType.Direct);
+        await channel.QueueDeclareAsync(queue, durable: false, exclusive: false, autoDelete: false, null);
+        await channel.QueueBindAsync(queue, _config.Exchange, queue);
 
         var consumer = new AsyncEventingBasicConsumer(channel);
         consumer.ReceivedAsync += async (ch, ea) =>

@@ -34,3 +34,21 @@ Give administrator privileges : rabbitmqctl.bat set_user_tags user1
 1. Open cmd in administrator mode.
 2. Run the command:
 `sc create "Homekit CCTV" binpath="C:\Users\westrada\Documents\repositories\garage\homekit.cctv\bin\Release\net9.0\win-x64\publish\homekit.cctv.exe"`
+
+
+# RabbitMQ Little Lemur (CloudAMQP instance)
+
+Dashboard Website: https://api.cloudamqp.com/console/0443cc6b-26f2-42af-975c-4a3d858583dd/details
+
+AMQP details
+
+User & VHost: jjmabrmy
+Password: PkNFAM1xFmvR5ssD7IjmWkuqbQKO83mK
+Ports: 5672 (5671 for TLS)
+URL: amqps://jjmabrmy:PkNFAM1xFmvR5ssD7IjmWkuqbQKO83mK@mustang.rmq.cloudamqp.com/jjmabrmy
+
+MQTT details
+Hostname: .rmq.cloudamqp.com
+Ports: 1883 (8883 for TLS)
+Username: jjmabrmy:jjmabrmy
+Password: PkNFAM1xFmvR5ssD7IjmWkuqbQKO83mK  
